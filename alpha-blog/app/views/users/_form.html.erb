@@ -33,7 +33,7 @@
                 <br>
 
                 <div class="form-group text-center">
-                    <%= f.submit "Sign Up", class:"btn btn-success btn-outline-light btn-lg"%>
+                    <%= f.submit(@user.new_record? ? "Sign Up" : "Update Account", class:"btn btn-primary btn-outline-light btn-lg") %>
                 </div>
             <% end %>
         </div>
