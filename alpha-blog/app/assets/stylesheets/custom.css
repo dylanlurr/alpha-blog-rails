@@ -1,0 +1,52 @@
+.navbar{
+    background-color: black !important;
+}
+
+.nav-link{
+    color: white !important;
+}
+
+#logo{
+    float: left;
+    font-size: 1.7em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+.jumbotron{
+    background-image: url('alpha-blog-home.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 425px;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#page-content {
+    flex: 1 0 auto;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+}
+
+#home-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#home-container .jumbotron {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+#sticky-footer{
+    flex-shrink: 0;
+}

@@ -1,0 +1,35 @@
+<div class="container">
+    <%# beginning form tag %>
+    <%# data: {turbo: false} -> buat tampilin data yg diinput di dlm web %>
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <%= render 'shared/errors' %>
+            <%= form_with(model: @article, local: true, class: "shadow p-5 mb-4 bg-secondary rounded") do |f| %>
+                <div class="form-group row">
+                    <%= f.label :title, class:"col-2 col-form-label text-white" %>
+                    <div class="col-10">
+                        <%= f.text_field :title, class:"form-control shadow rounded", placeholder: "Title of article "%>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="form-group row">
+                    <%= f.label :description, class:"col-2 col-form-label text-white" %>
+                    <div class="col-10">
+                        <%= f.text_area :description, rows:10, class:"form-control shadow rounded", placeholder: "Description of article" %>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="form-group text-center">
+                    <%= f.submit class:"btn btn-outline-light btn-lg"%>
+                </div>
+            <% end %>
+        </div>
+        <div class="mb-3">
+            <%= link_to '[ Cancel and return to articles listing ]', articles_path, class: "text-primary d-flex justify-content-center"%>
+        </div>
+    </div>
+</div>
