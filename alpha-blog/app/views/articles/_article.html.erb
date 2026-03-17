@@ -1,0 +1,24 @@
+<div class="container">
+    <% @articles.each do |article| %>
+        <div class="row justify-content-md-center mt-4">
+            <div class="col-8">
+                <div class="card text-center shadow mb-5 bg-white rounded">
+                    <div class="card-header">
+                        <%# it will only display an article if there is a user associated with it %>
+                        <em><%= article.user.username if article.user %></em>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
+                        <p class="card-text"><%= truncate(article.description, length: 30) %></p>
+                        <%= link_to "View", article_path(article), class:"btn btn-outline-success" %>
+                        <%= link_to "Edit", edit_article_path(article), class:"btn btn-outline-info" %>
+                        <%= button_to 'Delete', article_path(article), method: :delete, onclick: "return confirm('Are you sure?');", class: "btn btn-outline-danger", form_class: "d-inline" %>                        </div>
+                    <div class="card-footer text-body-secondary">
+                        <small>Created <%= time_ago_in_words(article.created_at) %> ago, 
+                            edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
